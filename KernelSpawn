@@ -11,8 +11,8 @@ camShake:Start()
 local killed = false
 local function Move()
 	local val = 80
-	local Reboundspeed = 1.2
-	local ReboundDelay = 1.25
+	local Reboundspeed = .79
+	local ReboundDelay = .8
 	local storer = Reboundspeed
 	local entityheight = Vector3.new(0,0.6,0)
 
@@ -55,7 +55,7 @@ local function Move()
 			end
 			if v.Character ~= nil then
 				if v.Character:FindFirstChild("HumanoidRootPart") and (entity.Position - v.Character:FindFirstChild("HumanoidRootPart").Position).magnitude <= val	 then
-					camShake:ShakeOnce(17,23,0.1,4,1,6)
+					camShake:ShakeOnce(20,28,0.1,4,1,6)
 				end
 			end
 		end
@@ -66,7 +66,8 @@ local function Move()
 
 
 		entity.Anchored = true
-		for i = game.ReplicatedStorage.GameData.LatestRoom.Value + 1,0,-1 do
+
+		for i = 0, game.ReplicatedStorage.GameData.LatestRoom.Value + 1 do
 			if gruh:FindFirstChild(i) then
 				print("room "..i)
 				local room = gruh[i]
@@ -82,8 +83,8 @@ local function Move()
 			end
 			print("looping")
 		end
-
-		for i = 0, game.ReplicatedStorage.GameData.LatestRoom.Value + 1 do
+		
+		for i = game.ReplicatedStorage.GameData.LatestRoom.Value + 1,0,-1 do
 			if gruh:FindFirstChild(i) then
 				print("room "..i)
 				local room = gruh[i]
