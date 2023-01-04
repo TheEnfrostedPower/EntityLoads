@@ -50,6 +50,12 @@ local function Move()
 				if canSeeTarget(v.Character,200) then
 					--ReboundMoving:Stop()
 					game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
+					firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"You died to who you call Kernel..","His presence is known for flickering all the lights for a long time.","When he does this, Hide somewhere that he cant find you","Closets will be a bad spot for Hiding!"})
+					for i,v in pairs(entity:GetDescendants()) do
+						if v:IsA("Sound") then
+							v:Stop()
+						end
+					end
 					--loadstring(game:HttpGet('https://github.com/Noonie1/ReboundMain/raw/main/JumpscareLua.lua'))()
 				end
 			end
