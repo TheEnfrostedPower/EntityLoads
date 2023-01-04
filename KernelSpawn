@@ -105,28 +105,12 @@ local function Move()
 	entity.Anchored = false
 end
 
-function OFFICIAL(Sapawn)
+function KernelMove()
 	wait(.2)
 	local Time = math.clamp(7,4,6)
-	events.flickerLights(workspace.CurrentRooms[Sapawn], Time)
+	events.flickerLights(workspace.CurrentRooms:GetChildren(), Time)
 	wait(Time)
 	Move()
 end
 
-game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
-	if game.ReplicatedStorage.GameData.LatestRoom.Value == 4 then
-		OFFICIAL(4)
-	elseif game.ReplicatedStorage.GameData.LatestRoom.Value == 9 then
-		OFFICIAL(9)
-	elseif game.ReplicatedStorage.GameData.LatestRoom.Value == 13 then
-		OFFICIAL(13)
-	elseif game.ReplicatedStorage.GameData.LatestRoom.Value == 19 then
-		OFFICIAL(19)
-	elseif game.ReplicatedStorage.GameData.LatestRoom.Value == 23 then
-		OFFICIAL(23)
-	elseif game.ReplicatedStorage.GameData.LatestRoom.Value == 26 then
-		OFFICIAL(26)
-	elseif game.ReplicatedStorage.GameData.LatestRoom.Value == 32 then
-		OFFICIAL(32)
-	end
-end)
+KernelMove()
