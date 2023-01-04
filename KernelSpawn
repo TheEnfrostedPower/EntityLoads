@@ -1,3 +1,5 @@
+print("Checked")
+
 local events = require(game.ReplicatedStorage.ClientModules.Module_Events)
 local cameraShaker = require(game.ReplicatedStorage.CameraShaker)
 local camera = workspace.CurrentCamera
