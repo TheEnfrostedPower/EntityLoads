@@ -11,8 +11,8 @@ camShake:Start()
 local killed = false
 local function Move()
 	local val = 80
-	local Reboundspeed = .79
-	local ReboundDelay = .8
+	local Reboundspeed = .6
+	local ReboundDelay = .6
 	local storer = Reboundspeed
 	local entityheight = Vector3.new(0,0.6,0)
 
@@ -55,14 +55,14 @@ local function Move()
 			end
 			if v.Character ~= nil then
 				if v.Character:FindFirstChild("HumanoidRootPart") and (entity.Position - v.Character:FindFirstChild("HumanoidRootPart").Position).magnitude <= val	 then
-					camShake:ShakeOnce(20,28,0.1,4,1,6)
+					camShake:ShakeOnce(20,28,0.1,2,1,6)
 				end
 			end
 		end
 	end)
 	---------------------MOVEMENTS
 	local gruh = workspace.CurrentRooms
-	for i = 1,5 do
+	for i = 1,6 do
 
 
 		entity.Anchored = true
