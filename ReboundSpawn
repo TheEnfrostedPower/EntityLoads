@@ -74,6 +74,7 @@ local function Move()
 
 
 	entity.Anchored = true
+	entity.Idlw:Play()
 	for i = game.ReplicatedStorage.GameData.LatestRoom.Value + 1,0,-1 do
 		if gruh:FindFirstChild(i) then
 			print("room "..i)
