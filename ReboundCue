@@ -50,5 +50,4 @@ game:GetService("TweenService"):Create(rebound_color,TweenInfo.new(5),{
 	Saturation = 0;
 	TintColor = Color3.fromRGB(255, 255, 255)
 }):Play()
-wait(5.1)
-rebound_color:Destroy()
+game:GetService("Debris"):AddItem(rebound_color,6)
