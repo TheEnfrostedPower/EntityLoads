@@ -1,5 +1,4 @@
 print("Checked")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundCue"))()
 
 local events = require(game.ReplicatedStorage.ClientModules.Module_Events)
 local cameraShaker = require(game.ReplicatedStorage.CameraShaker)
@@ -10,6 +9,9 @@ local camShake = cameraShaker.new(Enum.RenderPriority.Camera.Value, function(cf)
 end)
 camShake:Start()
 local killed = false
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundCue"))()
+camShake:ShakeOnce(5,6,.2,3)
 local function Move()
 	local val = 80
 	local Reboundspeed = 1.9
@@ -48,7 +50,7 @@ local function Move()
 			local v = game.Players.LocalPlayer
 			local parent = script.Parent
 			if v.Character ~= nil and not v.Character:GetAttribute("Hiding") then
-				if canSeeTarget(v.Character,200) then
+				if canSeeTarget(v.Character,75) then
 					--ReboundMoving:Stop()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundJumpscare"))()
 					wait(.5)
