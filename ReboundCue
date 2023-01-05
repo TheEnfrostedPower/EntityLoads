@@ -2,6 +2,7 @@ local sound = Instance.new("Sound")
 sound.SoundId = "rbxassetid://9114397505"
 sound.Volume = 0.699999988079071
 sound.Parent = workspace
+sound:Play()
 
 local distortion_sound_effect = Instance.new("DistortionSoundEffect")
 distortion_sound_effect.Level = 0.9200000166893005
@@ -41,7 +42,7 @@ rebound_color.Contrast = 0.699999988079071
 rebound_color.Saturation = -0.8999999761581421
 rebound_color.TintColor = Color3.new(0, 0.615686, 1)
 rebound_color.Name = "ReboundColor"
-rebound_color.Parent = workspace
+rebound_color.Parent = game.Lighting
 
 game:GetService("TweenService"):Create(rebound_color,TweenInfo.new(5),{
 	Contrast = 0;
