@@ -1,0 +1,35 @@
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 0 then
+	
+	if not workspace:FindFirstChild("endoormod") then
+		Instance.new("Folder",workspace).Name = "endoormod"
+	end
+	wait()
+	if workspace:FindFirstChild("endoormod") then
+		game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{ --DONT TOUCH THIS ONLY EDIT THE NAMES AND THE TEXTS. also make sure this is in startergui so it works.
+			Text = "Endless Doors mod Activated, By NovaNextruis#7379";
+			Color = Color3.new(1, 1, 1);
+			FontSize = Enum.FontSize.Size60;
+		})
+		wait(3)
+		game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{ --DONT TOUCH THIS ONLY EDIT THE NAMES AND THE TEXTS. also make sure this is in startergui so it works.
+			Text = "this will automatically turn on when you open door #1";
+			Color = Color3.new(1, 1, 1);
+			FontSize = Enum.FontSize.Size60;
+		})
+	end
+local Did = false
+	game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+		if Did == false then
+			Did = true 
+			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{ --DONT TOUCH THIS ONLY EDIT THE NAMES AND THE TEXTS. also make sure this is in startergui so it works.
+				Text = "Activated!";
+				Color = Color3.new(1, 0.721569, 0.721569);
+				FontSize = Enum.FontSize.Size24;
+			})
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/Start"))()
+		end
+	end)
+else
+	game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
+	firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"Your supposed to Execute the Script before the Door opens","Remember This!"})
+end
