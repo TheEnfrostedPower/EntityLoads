@@ -102,7 +102,7 @@ local GetAll = workspace.CurrentRooms:GetChildren()
 function KernelMove()
 	Move()
 end
-
+wait(5)
 KernelMove()
 
 local Count = 5
