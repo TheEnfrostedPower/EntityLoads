@@ -64,7 +64,7 @@ task.spawn(function()
 	end
 
 	script.Parent.greedWarn:Play()
-	game:GetService("TweenService"):Create(script.Parent.GreedIdk,TweenInfo.new(.4),{ImageTransparency = 0.85}):Play()
+	game:GetService("TweenService"):Create(script.Parent.GreedIdk,TweenInfo.new(.4),{ImageTransparency = 0.6}):Play()
 	local OkBro = false
 	game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
 		if OkBro == false then
