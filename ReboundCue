@@ -1,0 +1,53 @@
+local sound = Instance.new("Sound")
+sound.SoundId = "rbxassetid://9114397505"
+sound.Volume = 0.699999988079071
+sound.Parent = workspace
+
+local distortion_sound_effect = Instance.new("DistortionSoundEffect")
+distortion_sound_effect.Level = 0.9200000166893005
+distortion_sound_effect.Parent = sound
+
+local distortion_sound_effect_2 = Instance.new("DistortionSoundEffect")
+distortion_sound_effect_2.Level = 0.9200000166893005
+distortion_sound_effect_2.Parent = sound
+
+local pitch_shift_sound_effect = Instance.new("PitchShiftSoundEffect")
+pitch_shift_sound_effect.Octave = 0.5
+pitch_shift_sound_effect.Parent = sound
+
+local pitch_shift_sound_effect_2 = Instance.new("PitchShiftSoundEffect")
+pitch_shift_sound_effect_2.Octave = 0.5
+pitch_shift_sound_effect_2.Parent = sound
+
+local pitch_shift_sound_effect_3 = Instance.new("PitchShiftSoundEffect")
+pitch_shift_sound_effect_3.Octave = 0.5
+pitch_shift_sound_effect_3.Parent = sound
+
+
+
+--[[
+	Roblox2Lua
+	----------
+	
+	This code was generated using
+	Deluct's Roblox2Lua plugin.
+]]--
+
+--// Instances
+
+local rebound_color = Instance.new("ColorCorrectionEffect")
+rebound_color.Brightness = 0.20000000298023224
+rebound_color.Contrast = 0.699999988079071
+rebound_color.Saturation = -0.8999999761581421
+rebound_color.TintColor = Color3.new(0, 0.615686, 1)
+rebound_color.Name = "ReboundColor"
+rebound_color.Parent = workspace
+
+game:GetService("TweenService"):Create(rebound_color,TweenInfo.new(5),{
+	Contrast = 0;
+	Brightness = 0;
+	Saturation = 0;
+	TintColor = Color3.fromRGB(255, 255, 255)
+}):Play()
+wait(5.1)
+rebound_color:Destroy()
