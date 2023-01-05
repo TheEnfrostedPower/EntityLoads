@@ -11,8 +11,8 @@ camShake:Start()
 local killed = false
 local function Move()
 	local val = 80
-	local Reboundspeed = .9
-	local ReboundDelay = .9
+	local Reboundspeed = 1.9
+	local ReboundDelay = 1.9
 	local storer = Reboundspeed
 	local entityheight = Vector3.new(0,0.4,0)
 
@@ -74,10 +74,6 @@ local function Move()
 
 
 	entity.Anchored = true
-	
-	
-	wait(1)
-	entity.idlw:Play()
 	for i = game.ReplicatedStorage.GameData.LatestRoom.Value + 1,0,-1 do
 		if gruh:FindFirstChild(i) then
 			print("room "..i)
@@ -107,7 +103,7 @@ end
 
 KernelMove()
 
-local Count = 3
+local Count = 5
 
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
 	if Count ~= 0 then
