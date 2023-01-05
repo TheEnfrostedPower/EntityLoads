@@ -1,4 +1,5 @@
 print("Checked")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundCue"))()
 
 local events = require(game.ReplicatedStorage.ClientModules.Module_Events)
 local cameraShaker = require(game.ReplicatedStorage.CameraShaker)
