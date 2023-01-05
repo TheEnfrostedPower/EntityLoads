@@ -11,8 +11,8 @@ camShake:Start()
 local killed = false
 local function Move()
 	local val = 80
-	local Reboundspeed = 1.5
-	local ReboundDelay = 1.5
+	local Reboundspeed = .9
+	local ReboundDelay = .9
 	local storer = Reboundspeed
 	local entityheight = Vector3.new(0,0.4,0)
 
@@ -75,22 +75,25 @@ local function Move()
 
 	entity.Anchored = true
 	
-		for i = game.ReplicatedStorage.GameData.LatestRoom.Value + 1,0,-1 do
-			if gruh:FindFirstChild(i) then
-				print("room "..i)
-				local room = gruh[i]
-				if room:FindFirstChild("Nodes") then
-					local RoomStart = room:FindFirstChild("RoomStart")
-					local RoomEnd = room:FindFirstChild("RoomEnd")
-					if RoomEnd then
-						Reboundspeed = storer
-						game.TweenService:Create(entity,TweenInfo.new(Reboundspeed,Enum.EasingStyle.Linear,Enum.EasingDirection.Out),{CFrame = RoomStart.CFrame + entityheight}):Play()
-						wait(ReboundDelay)
-					end
+	
+	wait(1)
+	entity.idlw:Play()
+	for i = game.ReplicatedStorage.GameData.LatestRoom.Value + 1,0,-1 do
+		if gruh:FindFirstChild(i) then
+			print("room "..i)
+			local room = gruh[i]
+			if room:FindFirstChild("Nodes") then
+				local RoomStart = room:FindFirstChild("RoomStart")
+				local RoomEnd = room:FindFirstChild("RoomEnd")
+				if RoomEnd then
+					Reboundspeed = storer
+					game.TweenService:Create(entity,TweenInfo.new(Reboundspeed,Enum.EasingStyle.Linear,Enum.EasingDirection.Out),{CFrame = RoomStart.CFrame + entityheight}):Play()
+					wait(ReboundDelay)
 				end
 			end
-			print("looping")
 		end
+		print("looping")
+	end
 	--end
 
 	entity.Anchored = false
