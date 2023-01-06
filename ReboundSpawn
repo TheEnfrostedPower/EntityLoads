@@ -54,7 +54,12 @@ local function Move()
 					--ReboundMoving:Stop()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundJumpscare"))()
 					wait(.5)
-					game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
+					if workspace.Ambience_Seek.Playing == false  then
+				game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
+			end
+			if workspace.Ambience_Figure.Playing == false  then
+				game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
+			end
 					firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"You died to Rebound.","He spawns by making a Loud screaming noise to show that He Spawns.","Use this to your Advantage!"})
 					for i,v in pairs(entity:GetDescendants()) do
 						if v:IsA("Sound") then
