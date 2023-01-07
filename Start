@@ -1,23 +1,23 @@
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
-	if LatestRoom.Value == 13 then
+	if LatestRoom.Value == 7 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/GreedSpawn"))()
+	elseif LatestRoom.Value == 15 then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/MatcherSpawn"))()
 	elseif LatestRoom.Value == 18 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/MatcherSpawn"))()
-	elseif LatestRoom.Value == 23 then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/MatcherSpawn"))()
-	elseif LatestRoom.Value== 25 then
+	elseif LatestRoom.Value== 22 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/GreedSpawn"))()
 	elseif LatestRoom.Value == 26 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundSpawn"))()
 	elseif LatestRoom.Value == 34 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/MatcherSpawn"))()
 	elseif LatestRoom.Value == 38 then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/MatcherSpawn"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ShameSpawn"))()
 	elseif LatestRoom.Value== 39 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/GreedSpawn"))()
 	elseif LatestRoom.Value == 45 then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/MatcherSpawn"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ShameSpawn"))()
 	elseif LatestRoom.Value == 47 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/GreedSpawn"))()
 	elseif LatestRoom.Value == 52 then
@@ -32,8 +32,8 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/Matcher"))()
 	elseif LatestRoom.Value == 84 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundSpawn"))()
-	elseif LatestRoom.Value == 95 then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/MatcherSpawn"))()
+	elseif LatestRoom.Value == 92 then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ShameSpawn"))()
 	
 	end
 end)
