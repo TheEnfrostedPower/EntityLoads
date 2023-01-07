@@ -89,6 +89,8 @@ local function Move()
 					local RoomEnd = room:FindFirstChild("RoomEnd")
 					if RoomEnd then
 						Reboundspeed = storer
+						local events = require(game.ReplicatedStorage.ClientModules.Module_Events)
+						events.breakLights(RoomStart.Parent, 1)
 						game.TweenService:Create(entity,TweenInfo.new(Reboundspeed,Enum.EasingStyle.Linear,Enum.EasingDirection.Out),{CFrame = RoomStart.CFrame + entityheight}):Play()
 						wait(ReboundDelay)
 					end
