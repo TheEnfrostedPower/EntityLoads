@@ -41,7 +41,7 @@ local function Move()
 		return sound
 	end
 	
-	ReplaceWithGitSound(entity.Idlw,"https://github.com/XTRINT0/EntityLoads/blob/main/(4)%20Horror%20Radio%20Noises%20for%20my%20Game%20-%20Roblox.ogg?raw=true","Horror Radio Sounds for my Game")
+	--ReplaceWithGitSound(entity.Idlw,"https://github.com/XTRINT0/EntityLoads/blob/main/(4)%20Horror%20Radio%20Noises%20for%20my%20Game%20-%20Roblox.ogg?raw=true","Horror Radio Sounds for my Game")
 	
 	local function canSeeTarget(target,size)
 		if killed == true then
