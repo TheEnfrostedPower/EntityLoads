@@ -35,4 +35,8 @@ local Did = false
 	end)
 else
 	firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Too late to execute!")
+	wait(2)
+	firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"🤣🤣🤣🤣🤣")
+	wait()
+	firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent," ")
 end
