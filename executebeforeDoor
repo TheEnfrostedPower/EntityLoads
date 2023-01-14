@@ -21,15 +21,18 @@ local Did = false
 	game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
 		if Did == false then
 			Did = true 
+			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Script Activated.")
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/Start"))()
-			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{ --DONT TOUCH THIS ONLY EDIT THE NAMES AND THE TEXTS. also make sure this is in startergui so it works.
-				Text = "Activated!";
-				Color = Color3.new(1, 0.721569, 0.721569);
-				FontSize = Enum.FontSize.Size24;
-			})
+			wait(4)
+			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Created by NovaNextruis#1000, Suggestions by DYLANLENUNUB#5299/KLH#2370")
+			wait(2)
+			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Report bugs on: https://discord.gg/swpbSptSAU : Automatically copied to your Clipboard!")
+			setclipboard("https://discord.gg/swpbSptSAU")
+			wait(3)
+			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Thank you for using our Script")
+			wait()
 		end
 	end)
 else
-	game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
-	firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"Your supposed to Execute the Script before the Door opens","Remember This!"})
+	firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Too late to execute!")
 end
