@@ -20,7 +20,7 @@ local function Move()
 	s.Parent = workspace
 	local entity = s.Rebound
 	entity.CanCollide = false
-	
+
 	function GetGitSound(GithubSnd,SoundName)
 		local url=GithubSnd
 		if not isfile(SoundName..".mp3") then
@@ -31,18 +31,13 @@ local function Move()
 		return sound
 	end
 	
-	function ReplaceWithGitSound(Replacer,GithubSnd,SoundName)
-		local url=GithubSnd
-		if not isfile(SoundName..".mp3") then
-			writefile(SoundName..".mp3", game:HttpGet(url))
-		end
-		local sound:Sound=Replacer
-		sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
-		return sound
-	end
-	
+	local NewNoise = GetGitSound("https://github.com/XTRINT0/EntityLoads/blob/main/ReboundNoiseMoving.mp3?raw=true","ReboundNoiseMoving")
+	NewNoise.Parent=entity
+	NewNoise.Volume = 8
+	NewNoise:Play()
+
 	--ReplaceWithGitSound(entity.Idlw,"https://github.com/XTRINT0/EntityLoads/blob/main/(4)%20Horror%20Radio%20Noises%20for%20my%20Game%20-%20Roblox.ogg?raw=true","Horror Radio Sounds for my Game")
-	
+
 	local function canSeeTarget(target,size)
 		if killed == true then
 			return
