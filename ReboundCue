@@ -1,3 +1,13 @@
+local cameraShaker = require(game.ReplicatedStorage.CameraShaker)
+local camera = workspace.CurrentCamera
+
+local camShake = cameraShaker.new(Enum.RenderPriority.Camera.Value, function(cf)
+	camera.CFrame = camera.CFrame * cf
+end)
+camShake:Start()
+
+camShake:ShakeOnce(3,6,1,4)
+
 local sound = Instance.new("Sound")
 sound.SoundId = "rbxassetid://9114397505"
 sound.Volume = 0.699999988079071
@@ -5,11 +15,11 @@ sound.Parent = workspace
 sound:Play()
 
 local distortion_sound_effect = Instance.new("DistortionSoundEffect")
-distortion_sound_effect.Level = 0.9200000166893005
+distortion_sound_effect.Level = 0.98
 distortion_sound_effect.Parent = sound
 
 local distortion_sound_effect_2 = Instance.new("DistortionSoundEffect")
-distortion_sound_effect_2.Level = 0.9200000166893005
+distortion_sound_effect_2.Level = 0.98
 distortion_sound_effect_2.Parent = sound
 
 local pitch_shift_sound_effect = Instance.new("PitchShiftSoundEffect")
