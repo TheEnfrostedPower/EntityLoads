@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/executebeforeDoor"))()
