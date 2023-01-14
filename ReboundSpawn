@@ -11,10 +11,10 @@ camShake:Start()
 local killed = false
 local function Move()
 	local val = 80
-	local Reboundspeed = 1.9
-	local ReboundDelay = 1.9
+	local Reboundspeed = 1.3
+	local ReboundDelay = 1.3
 	local storer = Reboundspeed
-	local entityheight = Vector3.new(0,0.4,0)
+	local entityheight = Vector3.new(0,2,0)
 
 	local s= game:GetObjects("rbxassetid://11899865129")[1]
 	s.Parent = workspace
@@ -33,9 +33,12 @@ local function Move()
 	
 	local NewNoise = GetGitSound("https://github.com/XTRINT0/EntityLoads/blob/main/ReboundNoiseMoving.mp3?raw=true","ReboundNoiseMoving")
 	NewNoise.Parent=entity
-	NewNoise.Volume = 8
+	NewNoise.Volume = 6
 	NewNoise:Play()
-
+	NewNoise.RollOffMaxDistance = 300
+	NewNoise.RollOffMinDistance = 5
+	NewNoise.RollOffMode = Enum.RollOffMode.LinearSquare
+	
 	--ReplaceWithGitSound(entity.Idlw,"https://github.com/XTRINT0/EntityLoads/blob/main/(4)%20Horror%20Radio%20Noises%20for%20my%20Game%20-%20Roblox.ogg?raw=true","Horror Radio Sounds for my Game")
 
 	local function canSeeTarget(target,size)
@@ -115,17 +118,19 @@ end
 local GetAll = workspace.CurrentRooms:GetChildren()
 
 function KernelMove()
-	Move()
+	if workspace.Ambience_Seek.Playing == false and workspace.Ambience_Figure.Playing == false then
+		Move()
+	end
 end
 
 KernelMove()
 
-local Count = 5
+local Count = 4
 
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
 	if Count ~= 0 then
 		Count -= 1
 		wait(3.5)
-		Move()
+		KernelMove()
 	end
 end)
