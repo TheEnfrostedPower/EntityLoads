@@ -9,21 +9,40 @@ local camShake = cameraShaker.new(Enum.RenderPriority.Camera.Value, function(cf)
 end)
 camShake:Start()
 local killed = false
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundCue"))()
-camShake:ShakeOnce(5,6,.2,3)
 local function Move()
 	local val = 80
 	local Reboundspeed = 1.9
 	local ReboundDelay = 1.9
 	local storer = Reboundspeed
-	local entityheight = Vector3.new(0,8.4,0)
+	local entityheight = Vector3.new(0,0.4,0)
 
 	local s= game:GetObjects("rbxassetid://11899865129")[1]
 	s.Parent = workspace
 	local entity = s.Rebound
 	entity.CanCollide = false
-
+	
+	function GetGitSound(GithubSnd,SoundName)
+		local url=GithubSnd
+		if not isfile(SoundName..".mp3") then
+			writefile(SoundName..".mp3", game:HttpGet(url))
+		end
+		local sound=Instance.new("Sound")
+		sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+		return sound
+	end
+	
+	function ReplaceWithGitSound(Replacer,GithubSnd,SoundName)
+		local url=GithubSnd
+		if not isfile(SoundName..".mp3") then
+			writefile(SoundName..".mp3", game:HttpGet(url))
+		end
+		local sound:Sound=Replacer
+		sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+		return sound
+	end
+	
+	ReplaceWithGitSound(entity.Idlw,"https://github.com/XTRINT0/EntityLoads/blob/main/(4)%20Horror%20Radio%20Noises%20for%20my%20Game%20-%20Roblox.ogg?raw=true","Horror Radio Sounds for my Game")
+	
 	local function canSeeTarget(target,size)
 		if killed == true then
 			return
@@ -50,17 +69,12 @@ local function Move()
 			local v = game.Players.LocalPlayer
 			local parent = script.Parent
 			if v.Character ~= nil and not v.Character:GetAttribute("Hiding") then
-				if canSeeTarget(v.Character,75) then
+				if canSeeTarget(v.Character,200) then
 					--ReboundMoving:Stop()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundJumpscare"))()
 					wait(.5)
-					if workspace.Ambience_Seek.Playing == false  then
-				game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
-			end
-			if workspace.Ambience_Figure.Playing == false  then
-				game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
-			end
-					firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"You died to Rebound.","He spawns by making a Loud screaming noise to show that He Spawns.","Use this to your Advantage!"})
+					game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
+					firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"You died to Rebound.","He spawns by making a loud screaming noise to show that He Spawns.","Use this to your Advantage!"})
 					for i,v in pairs(entity:GetDescendants()) do
 						if v:IsA("Sound") then
 							v:Stop()
@@ -82,7 +96,6 @@ local function Move()
 
 
 	entity.Anchored = true
-	entity.Idlw:Play()
 	for i = game.ReplicatedStorage.GameData.LatestRoom.Value + 1,0,-1 do
 		if gruh:FindFirstChild(i) then
 			print("room "..i)
@@ -109,7 +122,7 @@ local GetAll = workspace.CurrentRooms:GetChildren()
 function KernelMove()
 	Move()
 end
-wait(5)
+
 KernelMove()
 
 local Count = 5
