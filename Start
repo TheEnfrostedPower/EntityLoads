@@ -66,7 +66,7 @@ function GetGitSound(GithubSnd,SoundName)
 	sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
 	return sound
 end
-local NewSound = GetGitSound("https://github.com/XTRINT0/EntityLoads/blob/main/why.mp3?raw=true","why")
+local NewSound = GetGitSound("https://github.com/XTRINT0/EntityLoads/blob/main/NewSeekMusic.mp3?raw=true","NewSeekMusic")
 NewSound.Parent = workspace
 NewSound.Name = "Ambience_Seek"
 NewSound.SoundGroup = game.SoundService:FindFirstChild("Main")
