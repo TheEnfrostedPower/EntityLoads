@@ -37,3 +37,19 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
 	
 	end
 end)
+
+game.Workspace.ChildAdded:Connect(function(Child)
+	if Child.Name == "SeekMoving" then
+		local getSeek : Model = game:GetObjects("rbxassetid://12180527998")[1]
+		getSeek.Parent = workspace
+		for i,v in pairs(getSeek:GetDescendants()) do
+			if v:IsA("BasePart") then
+				v.Transparency = 1
+			end
+		end
+		getSeek:PivotTo(Child.SeekRig.Root.CFrame)
+		local Weld = Instance.new("WeldConstraint",getSeek)
+		Weld.Part0 = getSeek.PrimaryPart
+		Weld.Part1 = Child.SeekRig.Root
+	end
+end)
