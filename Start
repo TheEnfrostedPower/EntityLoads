@@ -53,3 +53,19 @@ game.Workspace.ChildAdded:Connect(function(Child)
 		Weld.Part1 = Child.SeekRig.Root
 	end
 end)
+
+local OldSound = game.Workspace:FindFirstChild("Ambience_Seek")
+OldSound:Destroy()
+function GetGitSound(GithubSnd,SoundName)
+	local url=GithubSnd
+	if not isfile(SoundName..".mp3") then
+		writefile(SoundName..".mp3", game:HttpGet(url))
+	end
+	local sound=Instance.new("Sound")
+	sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+	return sound
+end
+local NewSound = GetGitSound("https://github.com/XTRINT0/EntityLoads/blob/main/why.mp3","why")
+NewSound.Parent = workspace
+NewSound.Name = "Ambience_Seek"
+NewSound.SoundGroup = game.SoundService:FindFirstChild("Main")
