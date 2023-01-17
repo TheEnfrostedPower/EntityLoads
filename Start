@@ -69,4 +69,5 @@ end
 local NewSound = GetGitSound("https://github.com/XTRINT0/EntityLoads/blob/main/NewSeekMusic.mp3?raw=true","NewSeekMusic")
 NewSound.Parent = workspace
 NewSound.Name = "Ambience_Seek"
+NewSound.Volume = 3
 NewSound.SoundGroup = game.SoundService:FindFirstChild("Main")
