@@ -54,20 +54,11 @@ game.Workspace.ChildAdded:Connect(function(Child)
 	end
 end)
 
-local OldSound = game.Workspace:FindFirstChild("Ambience_Seek")
-OldSound:Destroy()
-wait()
-function GetGitSound(GithubSnd,SoundName)
+function ReplaceAudGit(GithubSnd,SoundName)
 	local url=GithubSnd
 	if not isfile(SoundName..".mp3") then
 		writefile(SoundName..".mp3", game:HttpGet(url))
 	end
-	local sound=Instance.new("Sound")
-	sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
-	return sound
+	return (getcustomasset or getsynasset)(SoundName..".mp3")
 end
-local NewSound = GetGitSound("https://github.com/XTRINT0/EntityLoads/blob/main/NewSeekMusic.mp3?raw=true","NewSeekMusic")
-NewSound.Parent = workspace
-NewSound.Name = "Ambience_Seek"
-NewSound.Volume = 3
-NewSound.SoundGroup = game.SoundService:FindFirstChild("Main")
+game.Workspace:FindFirstChild("Ambience_Seek").SoundId = ReplaceAudGit("https://github.com/XTRINT0/EntityLoads/blob/main/NewSeekMusic.mp3?raw=true","NewSeekMusic")
