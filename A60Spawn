@@ -14,7 +14,7 @@ local function Move()
 	local storer = Reboundspeed
 	local entityheight = Vector3.new(0,1.1,0)
 
-	local s= game:GetObjects("rbxassetid://12208757936")[1]
+	local s= game:GetObjects("rbxassetid://12209319881")[1]
 	s.Parent = workspace
 	local entity = s.RushNew
 	entity.CanCollide = false
@@ -111,8 +111,5 @@ function KernelMove()
 		Move()
 	end
 end
-spawn(function()
-	while wait(300) do
-		KernelMove()
-	end
-end)
+
+KernelMove()
