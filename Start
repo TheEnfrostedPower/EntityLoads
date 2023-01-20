@@ -1,3 +1,9 @@
+local A60Doer = coroutine.create(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/A60Spawn"))()
+end)
+
+coroutine.resume(A60Doer)
+
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
 	if LatestRoom.Value == 4 then
@@ -34,7 +40,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundSpawn"))()
 	elseif LatestRoom.Value == 92 then
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/ReboundSpawn"))()
-	
+
 	end
 end)
 
