@@ -1,8 +1,8 @@
-local A60Doer = coroutine.create(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/A60Spawn"))()
+spawn(function()
+	while wait(300) do
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/A60Spawn"))()
+	end
 end)
-
-coroutine.resume(A60Doer)
 
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
