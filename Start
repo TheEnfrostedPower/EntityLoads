@@ -68,3 +68,4 @@ function ReplaceAudGit(GithubSnd,SoundName)
 	return (getcustomasset or getsynasset)(SoundName..".mp3")
 end
 game.Workspace:FindFirstChild("Ambience_Seek").SoundId = ReplaceAudGit("https://github.com/XTRINT0/EntityLoads/blob/main/NewSeekMusic.mp3?raw=true","NewSeekMusic")
+game.Workspace:FindFirstChild("Ambience_Seek").Volume = 3
