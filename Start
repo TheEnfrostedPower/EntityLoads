@@ -1,7 +1,5 @@
 spawn(function()
-	while wait(300) do
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/A60Spawn"))()
-	end
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/A60Spawn"))()
 end)
 
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom
