@@ -15,11 +15,11 @@ sound.Parent = workspace
 sound:Play()
 
 local distortion_sound_effect = Instance.new("DistortionSoundEffect")
-distortion_sound_effect.Level = 0.98
+distortion_sound_effect.Level = 1
 distortion_sound_effect.Parent = sound
 
 local distortion_sound_effect_2 = Instance.new("DistortionSoundEffect")
-distortion_sound_effect_2.Level = 0.98
+distortion_sound_effect_2.Level = 1
 distortion_sound_effect_2.Parent = sound
 
 local pitch_shift_sound_effect = Instance.new("PitchShiftSoundEffect")
