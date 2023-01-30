@@ -1,42 +1,39 @@
-if game.ReplicatedStorage.GameData.LatestRoom.Value == 0 then
+--[[
+	Roblox2Lua
+	----------
 	
-	if not workspace:FindFirstChild("endoormod") then
-		Instance.new("Folder",workspace).Name = "endoormod"
-	end
-	wait()
-	if workspace:FindFirstChild("endoormod") then
-		game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{ --DONT TOUCH THIS ONLY EDIT THE NAMES AND THE TEXTS. also make sure this is in startergui so it works.
-			Text = "Endless Doors mod Activated, By NovaNextruis#7379";
-			Color = Color3.new(1, 1, 1);
-			FontSize = Enum.FontSize.Size60;
-		})
-		wait(3)
-		game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{ --DONT TOUCH THIS ONLY EDIT THE NAMES AND THE TEXTS. also make sure this is in startergui so it works.
-			Text = "this will automatically turn on when you open door #1";
-			Color = Color3.new(1, 1, 1);
-			FontSize = Enum.FontSize.Size60;
-		})
-	end
-local Did = false
-	game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
-		if Did == false then
-			Did = true 
-			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Script Activated.")
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/Start"))()
-			wait(4)
-			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Created by NovaNextruis#1000, Suggestions by DYLANLENUNUB#5299/KLH#2370")
-			wait(2)
-			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Report bugs on: https://discord.gg/swpbSptSAU : Automatically copied to your Clipboard!")
-			setclipboard("https://discord.gg/swpbSptSAU")
-			wait(3)
-			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Thank you for using our Script")
-			wait()
-		end
-	end)
-else
-	firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"Too late to execute!")
-	wait(2)
-	firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"🤣🤣🤣🤣🤣")
-	wait()
-	firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent," ")
-end
+	This code was generated using
+	Deluct's Roblox2Lua plugin.
+]]--
+
+--// Instances
+
+local screen_gui = Instance.new("ScreenGui")
+screen_gui.IgnoreGuiInset = false
+screen_gui.ResetOnSpawn = true
+screen_gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screen_gui.Parent = game:GetService("CoreGui")
+
+local text_label = Instance.new("TextLabel")
+text_label.Font = Enum.Font.Oswald
+text_label.Text = "Patched version, We will be fixing this soon!"
+text_label.TextColor3 = Color3.new(1, 1, 1)
+text_label.TextScaled = true
+text_label.TextSize = 14
+text_label.TextWrapped = true
+text_label.BackgroundColor3 = Color3.new(1, 1, 1)
+text_label.BackgroundTransparency = 1
+text_label.Position = UDim2.new(0.157894731, 0, 0.70655489, 0)
+text_label.Size = UDim2.new(0.682748556, 0, 0.105182923, 0)
+text_label.Visible = true
+text_label.Parent = screen_gui
+
+local caption = Instance.new("Sound")
+caption.SoundId = "rbxassetid://3848738542"
+caption.Volume = 0.10000000149011612
+caption.Name = "Caption"
+caption.Parent = screen_gui
+caption:Play()
+game:GetService("TweenService"):Create(text_label,TweenInfo.new(5),{TextTransparency = 1}):Play()
+wait(5)
+game.Players.LocalPlayer:Kick("Kicked by the mod, We kicked you out to prevent you from getting caught by the anti-cheat")
