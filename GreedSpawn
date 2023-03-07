@@ -71,10 +71,10 @@ task.spawn(function()
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/XTRINT0/EntityLoads/main/GreedJumpscare"))()
 			wait(.7)
 			if workspace.Ambience_Seek.Playing == false  then
-				game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
+				game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(60)
 			end
 			if workspace.Ambience_Figure.Playing == false  then
-				game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(100)
+				game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):TakeDamage(60)
 			end
 		end
 	end)
